@@ -1,0 +1,61 @@
+.content {
+    display: block;
+    padding: 16px;
+}
+
+
+.profile-pic-div{
+    max-width : 100%;
+    border: none !important;
+    text-align: center;
+    overflow: hidden;
+}
+
+.profile-pic-div img
+{
+    border-radius: 50%;
+    max-width:30%;
+    max-height : 160px;
+    max-width: inherit;
+}
+
+#file{
+    display: none;
+}
+
+#uploadBtn{
+    width: 100%;
+    padding : 7px 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top : 20%;
+
+}
+
+.form-group .form-control{
+    width : 100%;
+    margin : 8px 0px;
+    padding : 10px 5px;
+    border : none !important;
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: 2px 1px 7px;
+    opacity : 0.8;
+}
+
+.form-control.ng-touched.ng-invalid {
+    border: 1px solid red;
+    opacity : 1;
+}
+
+.form-control.ng-touched.ng-valid {
+    border:1px solid green;
+}
+
