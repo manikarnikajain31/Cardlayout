@@ -2,6 +2,10 @@
   <span>Card view</span>
 </mat-toolbar>
 
+<!-- <nav class="navbar">
+  <input class="form-control" type="text" name="name" [(ngModel)]="name" (ngModelChange)="Search()" placeholder="Enter Name to search">
+</nav> -->
+
 <div class="content">
   <div fxlayout="row wrap" fxLayoutGap="16px grid"> 
     <!-- fxflex=size of card -->
@@ -39,6 +43,13 @@
                     </form>
               </div>
           </div>
+        </div>
+
+
+        <div *ngFor="let user of users">
+          {{user.name}}
+          {{user.email}}
+          {{user.phone}}
         </div>
 
      

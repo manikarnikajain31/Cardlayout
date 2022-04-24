@@ -1,0 +1,30 @@
+{
+  "Users":[
+    {
+      "name":"Virat Kohli",
+      "email":"virat@gmail.com",
+      "phone":9876543210
+    },
+    {
+      "name":"Rohit Sharma",
+      "email":"rohit@gmail.com",
+      "phone":912345678
+    },
+    {
+      "name":"Sachin Tendulkar",
+      "email":"sachin@gmail.com",
+      "phone":9234567810
+    },
+    {
+      "name":"MS Dhoni",
+      "email":"mahendra@gmail.com",
+      "phone":9345678912
+    },
+    
+    {
+      "name":"Hardik Pandya",
+      "email":"hardik@gmail.com",
+      "phone":8380067167
+    }
+  ]
+}
