@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
 // import { Ng2OrderModule } from 'ng2-order-pipe';
 // import {NgxPaginationModule } from 'ngx-pagination';
+import {MatGridListModule} from '@angular/material/grid-list';
+import{Sort} from '@angular/material/sort'
 
 const Material =[
   MatToolbarModule,
@@ -37,7 +39,8 @@ const Material =[
     HttpClientModule,
     // Ng2SearchPipeModule,
     // Ng2OrderModule,
-    // NgxPaginationModule
+    // NgxPaginationModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
