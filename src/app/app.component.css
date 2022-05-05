@@ -1,3 +1,5 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 .content {
     display: block;
     padding: 16px;
@@ -59,3 +61,13 @@
     border:1px solid green;
 }
 
+.nav-card-page 
+{
+    background-color: rgba(0,0,0,0.3);
+    width: 100%;
+}
+
+.nav-card-page li 
+{
+    list-style : none;
+}

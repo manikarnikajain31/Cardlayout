@@ -1,22 +1,26 @@
-import { NgModule } from '@angular/core';
+import { APP_BOOTSTRAP_LISTENER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { Ng2SearchPipeModule } from 'ng2-search-filter';
-// import { Ng2OrderModule } from 'ng2-order-pipe';
-// import {NgxPaginationModule } from 'ngx-pagination';
-import {MatGridListModule} from '@angular/material/grid-list';
-import{Sort} from '@angular/material/sort'
+import { MatGridListModule } from '@angular/material/grid-list';
+import { GridModule } from '@angular/flex-layout';
+import { from, pipe } from 'rxjs';
+import { SortPipe } from './shared/pipes/sort.pipe';
+import { PicsumComponent } from './picsum/picsum.component';
+import { PicsumService } from './services/picsum.service';
+// import { PaginationDirective } from './directives/pagination.directive';
+import { MaterialModule } from './material.module';
+// import { SEARCHComponent } from './search/search.component';
 
-const Material =[
+const Material = [
   MatToolbarModule,
   MatIconModule,
   FormsModule,
@@ -25,6 +29,12 @@ const Material =[
 @NgModule({
   declarations: [
     AppComponent,
+    SortPipe,
+    PicsumComponent,
+    PicsumComponent,
+    // PaginationDirective,
+    // SEARCHComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -33,14 +43,16 @@ const Material =[
     MatCardModule,
     MatToolbarModule,
     FlexLayoutModule,
+    FlexModule,
     MatButtonModule,
     MatIconModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // Ng2SearchPipeModule,
-    // Ng2OrderModule,
-    // NgxPaginationModule,
-    MatGridListModule
+    MatGridListModule,
+    GridModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

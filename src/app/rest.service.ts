@@ -10,8 +10,8 @@ export class RestService {
 
   constructor(private http:HttpClient) { }
 
-  url: string ="http://localhost:3000/Users";
-  getUsers(){
-    return this.http.get<Users[]>(this.url);
+  url: string ="";
+  getUsers(pageno:number){
+    return this.http.get<Users[]>(`http://localhost:3000/Users?_page=${pageno}&_limit=4`);
   }
 }
