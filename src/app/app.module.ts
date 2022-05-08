@@ -19,6 +19,9 @@ import { PicsumService } from './services/picsum.service';
 // import { PaginationDirective } from './directives/pagination.directive';
 import { MaterialModule } from './material.module';
 // import { SEARCHComponent } from './search/search.component';
+import { FilterComponent } from './filter/filter.component';
+import { FilterPipe } from './Pipes/filter.pipe';
+
 
 const Material = [
   MatToolbarModule,
@@ -34,6 +37,8 @@ const Material = [
     PicsumComponent,
     // PaginationDirective,
     // SEARCHComponent,
+    FilterComponent,
+    FilterPipe,
 
   ],
   imports: [

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { switchMap, tap } from 'rxjs/operators';
 import { Users } from './users';
@@ -7,6 +7,8 @@ import { SelectorMatcher } from '@angular/compiler';
 // import {Sort} from '@angular/material/sort';
 import { PicsumComponent } from './picsum/picsum.component';
 import { PicsumService } from './services/picsum.service';
+import { HttpClient } from '@angular/common/http';
+import { FilterComponent } from './filter/filter.component';
 
 
 
@@ -30,6 +32,10 @@ export class AppComponent implements OnInit {
   pageNo: number = 1;
   enteredSearchValue: string = '';
   searchText: string = '';
+  modalService: any;
+  deleteId: string | undefined;
+  httpClient: any;
+  filterField: string = "all";
 
 
 
@@ -86,5 +92,29 @@ export class AppComponent implements OnInit {
     this.searchText = searchValue;
     console.log(this.searchText);
   }
+
+  // Delete Operation
+
+  openDelete(user: Users) {
+
+    const shouldDelete = confirm(`Do you want to delete ${user.name}`)
+    if (shouldDelete) {
+      this.rs.deleteUsers(user, () => {
+        this.getUsers(1)
+      })
+    }
+  }
+
+  // onDelete() {
+  //   const deleteUrl = 'http://localhost:4200/' + this.deleteId + '/delete';
+  //   this.httpClient.delete(deleteUrl).subscribe(next, (result: object) => {
+  //     this.ngOnInit();
+  //     this.modalService.dismissAll();
+  //   });
+  // }
+}
+
+function next(next: any, arg1: (result: object) => void) {
+  throw new Error('Function not implemented.');
 }
 
